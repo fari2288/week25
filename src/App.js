@@ -1,8 +1,14 @@
+import React from 'react';
 import './App.css';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import Hello from './components/Hello';
+//import Hello from './components/Hello';
+import {Comment, comment} from './components/Comment';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+
 
 
 
@@ -26,10 +32,15 @@ export const data = {
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Pie data={data}/>
+      <Hello/>
+      <Comment
+      date={comment.date}
+      text={comment.text}
+      author={comment.author} />
     </div>
   );
 }
 
-export default App;
+export default App
